@@ -1,4 +1,5 @@
-**Motivational Word Frequency Analyzer**
+**Inspiraional Quotes Collection**
+
 Analyzing Positive & Inspirational Language in Large Quote Datasets
 
 **1. Problem Statement**
