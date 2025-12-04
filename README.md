@@ -1,86 +1,265 @@
-**Inspirational Quotes – Positive Word Frequency Analysis**
+**Motivational Word Frequency Analyzer**
+Analyzing Positive & Inspirational Language in Large Quote Datasets
 
-This project is about finding which positive words appear the most in a large set of inspirational quotes. I collected around 1000–2000 quotes and analyzed the text to see which motivational themes are used repeatedly (like hope, dream, courage, success, etc.).
+**1. Problem Statement**
 
-I mainly built this project to practice text handling, cleaning, and basic NLP tasks.
+Inspirational and motivational quotes often use emotionally uplifting words such as hope, dream, success, and courage. However, without analysis, we do not know which motivational words appear most frequently across thousands of quotes.
 
-**Why I Did This Project**
+The goal of this project is to analyze a large dataset of inspirational quotes (1000–2000 lines) and identify:
 
-I wanted to explore:
+Which positive or motivational words occur most often
 
-how to work with a large text file
+What themes (hope, struggle, emotion, wisdom, action) appear repeatedly
 
-how to clean and preprocess text data
+How quotes behave under custom NLP rule-based detectors
 
-how to count how many times specific words appear
+This project helps uncover linguistic patterns, emotional tone, and common motivational themes used in modern inspirational literature.
 
-how to visualize results clearly
+**2. Project Objectives**
+**Main Objectives**
 
-It helped me understand how real text data behaves and how to extract useful patterns from it.
+Extract and clean a large dataset of inspirational text.
 
-**Dataset**
+Count the frequency of selected positive/motivational words:
+success, dream, believe, hope, courage, future, goal, trust, achieve
 
-All the quotes are stored in a single text file named:
+Apply 8 NLP rule-based detectors:
+
+Positive words
+
+Hope + struggle
+
+Long quotes
+
+Emotional words
+
+Wisdom words
+
+Action words
+
+Negation words
+
+Question detector
+
+**What You Will Learn**
+
+Text preprocessing (cleaning, tokenizing)
+
+Word frequency analysis
+
+Parallel processing using ThreadPoolExecutor
+
+Creating data visualizations with Matplotlib
+
+Designing custom NLP rules using regex
+
+Saving data to CSV and SQLite database
+
+**3. How the Code Works (Workflow Overview)**
+**Step 1 → Import Libraries**
+
+pandas
+
+re (regex)
+
+matplotlib
+
+concurrent.futures
+
+sqlite3
+
+**Step 2 → Load Dataset**
+
+Reads the .txt file containing 1000–2000 quotes.
+
+**Step 3 → Clean Text**
+
+Convert to lowercase
+
+Remove punctuation
+
+Keep only words and “?” for question rule
+
+**Step 4 → Chunking**
+
+Breaks text into chunks of 20 lines for multithreading.
+
+**Step 5 → Parallel Word Counting**
+
+Counts occurrences of every positive word using ThreadPoolExecutor.
+
+**Step 6 → Apply 8 NLP Rules**
+
+Rules detect:
+
+Positive words
+
+Hope + struggle combinations
+
+Long quotes
+
+Emotional words
+
+Wisdom words
+
+Action verbs
+
+Negation
+
+Questions
+
+**Step 7 → Save Results**
+
+Outputs include:
+
+CSV file
+
+SQLite database
+
+Rule plan CSV
+
+Console print of matched rules
+
+**Step 8 → Visualize Data**
+
+Bar chart
+
+Pie chart
+
+**4. How to Run the Project (Step-by-Step)**
+**Step 1: Setup in Google Colab**
+
+Open Google Colab.
+
+Create a new Python notebook.
+
+**Step 2: Upload Dataset to Google Drive**
+
+Place this file inside:
+
+/content/drive/MyDrive/NLP_project/
+
+
+File name required:
 
 inspirational_quotes.txt
 
+**Step 3: Add the Python Script**
 
-The text file contains multiple quotes, one per line or separated by newline breaks.
+Paste the full Python code into Colab.
 
-What the Project Does
-✔ Cleans the Text
+Make sure the paths are:
 
-Converts everything to lowercase
+FILE_PATH = '/content/drive/MyDrive/NLP_project/inspirational_quotes.txt'
+CSV_OUTPUT = '/content/drive/MyDrive/NLP_project/results_inspirational_quotes.csv'
+DB_OUTPUT = '/content/drive/MyDrive/NLP_project/results_inspirational_quotes.db'
+RULE_PLAN_CSV = '/content/drive/MyDrive/NLP_project/rule_plan.csv'
 
-Removes punctuation
+**Step 4: Connect Google Drive**
 
-Removes extra spaces
+Run:
 
-✔ Selects Positive Words
+from google.colab import drive
+drive.mount('/content/drive')
 
-Some of the words I focused on:
+**Step 5: Run the Main Function**
 
-success, dream, believe, hope, courage, life, work, goal, future, inspire
+Execute:
 
-✔ Counts Word Frequency
-
-It checks how many times each selected positive word appears across all quotes.
-
-**✔ Generates Output**
-
-A CSV file showing each word and its frequency
-
-A bar graph comparing word counts
-
-A word cloud highlighting the most common positive words
-
-These outputs make it easy to understand which themes appear the most in inspirational writing.
-
-Project Output Files
+main()
 
 
-**What I Learned**
+This triggers:
 
-This project helped me understand:
+Text cleaning
 
-how to clean unstructured text
+Chunking
 
-how to work with word frequency counts
+Parallel processing
 
-how to create visualizations
+Word count
 
-how to structure a simple text-analysis project
+Rule detections
 
-Overall, it was a great hands-on exercise to practice Python and basic NLP concepts.
+CSV + DB saving
 
-**Future Ideas**
+Chart generation
 
-Some improvements I might add later:
+**Step 6: Output Files Generated Automatically**
 
-expanding the list of positive words
+Stored in:
 
-running sentiment analysis on each quote
+/content/drive/MyDrive/NLP_project/
 
-grouping quotes by themes
+Files created:
 
-building a small interface to view results interactively
+results_inspiritional_quotes.csv
+
+results_inspirational_quotes.db
+
+rule_plan.csv
+
+Bar chart
+
+Pie chart
+
+**Step 7: View or Download Outputs**
+
+CSV → open in Excel/Sheets
+
+DB → open in DB Browser for SQLite
+
+Charts → appear directly in Colab
+
+Rule matches → printed in console
+
+**5. Rule-Based Detection System**
+Rule Name	Purpose
+Positive Word Detector	Detect motivational keywords
+Hope + Struggle Detector	Identify quotes combining hope with struggle
+Long Quote Detector	Finds quotes containing more than 20 words
+Action Word Detector	Detects verbs like start, act, begin, rise
+Emotion Word Detector	Detects love, care, kindness, joy
+Wisdom Word Detector	Detects learn, teach, understand
+Negation Detector	Detects words like not, never, don’t
+Question Detector	Detects presence of “?”
+
+**6. Expected Output**
+CSV of Positive Word Counts
+
+Example:
+
+word,frequency
+hope,120
+dream,95
+success,80
+
+Bar Chart
+
+Displays frequency of each positive word.
+![WhatsApp Image 2025-12-04 at 21 18 17_34deb9aa](https://github.com/user-attachments/assets/31653cd7-7ace-46f0-8f38-d1ac57bd970d)
+
+
+Pie Chart
+
+Shows percentage contribution of each word.
+![WhatsApp Image 2025-12-04 at 21 16 59_a2338030](https://github.com/user-attachments/assets/80101289-2252-4a81-80fd-b2c013666bc9)
+
+
+**7. Conclusion**
+
+This project provides strong practical experience in:
+
+Text analysis
+
+NLP preprocessing
+
+Word frequency modeling
+
+Rule-based NLP
+
+Data visualization
+
+CSV and SQL storage
+
+It reveals which motivational themes dominate inspirational literature and builds essential skills for NLP, data
