@@ -92,10 +92,35 @@ Outputs:
 
 ---
 
-## ▶️ 4. How to Run the Project  
+---
 
-### **Step 1 → Google Colab Setup**
-Create a Colab notebook.
+## ▶️ 4. How to Run the Project (Step-by-Step)
 
-### **Step 2 → Upload Dataset**
-Path required:  
+### **1. Download the Dataset**
+- Download or prepare the file: `inspirational_quotes.txt`
+- Upload it to Google Drive at:
+- /content/drive/MyDrive/NLP_project/
+- 
+### **2. Open Google Colab**
+- Go to https://colab.research.google.com/
+- Create a new Python Notebook.
+
+### **3. Mount Google Drive**
+Run:
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+
+**### **4. Add the Python Script****
+
+-Paste your full project code into the Colab notebook.
+-Ensure file paths are set correctly:
+-FILE_PATH = '/content/drive/MyDrive/NLP_project/inspirational_quotes.txt'
+-CSV_OUTPUT = '/content/drive/MyDrive/NLP_project/results_inspirational_quotes.csv'
+-DB_OUTPUT = '/content/drive/MyDrive/NLP_project/results_inspirational_quotes.db'
+-RULE_PLAN_CSV = '/content/drive/MyDrive/NLP_project/rule_plan.csv'
+
+**### 5. Run the Main Function**
+
+-Execute:
+-main()
