@@ -89,7 +89,7 @@ Outputs:
 - Pie Chart  
 
 
-## 4. How to Run the Project
+## 🚀 4. How to Run the Project
 
 **Step 1: Open Google Colab**  
 https://colab.research.google.com
