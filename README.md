@@ -17,6 +17,7 @@ This project analyzes **1000–2000 inspirational quotes** to uncover:
 - Visual patterns through charts  
 
 
+
 ## 🎯 2. Project Objectives  
 
 ### **Main Objectives**
@@ -41,6 +42,7 @@ This project analyzes **1000–2000 inspirational quotes** to uncover:
 - Multithreading with ThreadPoolExecutor  
 - Matplotlib visualizations  
 - Saving data into CSV + SQLite  
+
 
 
 ## 🔄 3. How the Code Works (Workflow Overview)
@@ -89,6 +91,7 @@ Outputs:
 - Pie Chart  
 
 
+
 ## 🚀 4. How to Run the Project
 
 **Step 1: Open Google Colab**  
@@ -119,6 +122,7 @@ The project will:
 Your output (CSV, charts, database) will appear in Colab after execution.
 
 
+
 ## 🧠 5. Rule-Based Detection System
 
 | Rule Name              | Purpose                               |
@@ -131,6 +135,7 @@ Your output (CSV, charts, database) will appear in Colab after execution.
 | Wisdom Word            | Detects wisdom-based words (learn, teach, understand) |
 | Negation               | Detects negation (not, never, don’t)   |
 | Question Detector      | Detects the presence of “?”            |
+
 
 
 ## 📊 6. Expected Output
@@ -153,6 +158,7 @@ Represents the percentage contribution of each positive word.
 <img width="1460" height="990" alt="Pie Chart" src="https://github.com/user-attachments/assets/17ab40a6-f13d-4b98-863e-e0ed8b07e153" />
 
 
+
 ## 🔮 7. Future Scope
 
 This project can be expanded and improved in several ways:
@@ -171,6 +177,7 @@ This project can be expanded and improved in several ways:
 
 - **Multi-Language Support:**  
   Analyze inspirational quotes in Hindi, Punjabi, Spanish, etc., to compare motivational themes across cultures.
+
 
 
 ## 🏁 8. Conclusion
