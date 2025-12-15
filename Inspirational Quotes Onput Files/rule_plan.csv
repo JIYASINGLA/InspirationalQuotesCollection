@@ -1,9 +1,0 @@
-rule_name,purpose,example_sentence,logic,expected_output
-positive_word_detector,Identify motivational and positive keywords.,The future belongs to those who believe in the beauty of their dreams.,\b(success|dream|believe|hope|courage|future|goal|trust|achieve)\b,Positive keywords
-hope_and_struggle_detector,Detect quotes where hope appears with struggle words.,"Even in pain, hope keeps us moving forward",\bhope\b.*\b(struggle|pain|hard)\b|\b(struggle|pain|hard)\b.*\bhope\b,Hope + struggle quotes
-long_quote_detector,Identify quotes with more than 20 words.,Do all the good you can...,"(\b\w+\b[\s,.]*){20,}",Long quotes
-action_word_detector,Detect action-oriented motivational words.,Listen with curiosity. Speak with honesty. Act with integrity.,\b(start|act|move|push|try|begin|step|rise)\b,Action words
-emotion_word_detector,Detect emotional words.,Act of kindness.,\b(love|care|feel|joy|peace|happiness|kindness)\b,Emotion words
-wisdom_word_detector,Detect wisdom or learning-based lines.,"If you get, give. If you learn, teach.",\b(wisdom|learn|lesson|knowledge|understand)\b,Wisdom sentences
-negation_detector,Detect strong motivational negations.,Do not judge me by my success...,\b(not|never|dont|don't|no)\b,Negation-based motivation
-question_detector,Detect questions inside quotes.,Ask yourself: Have you been kind today?,\?,Question-based quotes
